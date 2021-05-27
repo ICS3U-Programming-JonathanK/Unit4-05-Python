@@ -10,7 +10,7 @@ def main():
     # initialize the counter and sum
     counter = 0
     sum = 0
-    sum_string = ""
+    #sum_string = ""
 
     # get the user number as a string
     num_of_nums_string = input("How many numbers do you want to add? ")
@@ -24,18 +24,17 @@ def main():
     else:
         # calculate the sum of all numbers from 0 to user number
         if (num_of_nums_int < 0):
-            print("The number is not a part of the sum")
+            print("Please enter a valid number")
         else:
-            while (counter <= num_of_nums_int):
+            while (counter < num_of_nums_int):
+                counter = counter + 1
                 # get the user number as a string
                 num_string = input("Enter a number: ")
-                counter = counter + 1
                 # check for any errors
                 try:
                     num_int = int(num_string)
                 except ValueError:
                     print("Please enter a valid number")
-
                 else:
                     if(num_int <= 0):
                         print("{} is lower than 0, so"
@@ -43,7 +42,9 @@ def main():
                         continue
                     # calculate the sum
                     sum = sum + num_int
-            print("THe sum is {}". format(sum))
+                finally:
+                    print("The sum is {}". format(sum))
+                    print("Thank you for your input")
 
 
 if __name__ == "__main__":
